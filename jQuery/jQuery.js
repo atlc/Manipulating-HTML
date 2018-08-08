@@ -27,4 +27,24 @@ $(document).ready(function(){
         $colorDiv.css('background-color', '');
     });
 
+    $('body').append('<p>jQuery makes things a lot cleaner!</p>');
+    
+    $('p').click(function() {
+        $(this).css('color', getRandomColor());
+    });
+
+    $('body').append('<button id=\'myNameButton\'>My Name</button>');
+    $('body').append('<div id=\'myNameDiv\'></div>');
+
+    $('#myNameButton').click(function(){
+        $('#myNameDiv').append('<span>Andrew</span>');
+    });
+
+    let friendArr = ['Melissa','Amy','Matt','Brittney','John','Brennan','Molly','Kelley','Bristol','Hannah'];
+    
+    $('#friendButton').click(function(){
+        friendArr.forEach(function(friendo){
+            $('#friendList').append('<li>'+friendo+'</li>');
+        });
+    });
 });
